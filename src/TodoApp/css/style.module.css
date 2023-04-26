@@ -1,0 +1,166 @@
+body {
+    background-color: #ccc;
+}
+
+.todoApp {
+    margin: 20px auto;
+    background-color: rgb(42, 165, 147);
+    width: 600px;
+    border-radius: 12px;
+}
+
+.title {
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.addTodo {
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+.addTodo button {
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.addTodo input {
+    width: 350px;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-right: none;
+
+
+}
+
+.addTodo .addBtn {
+    width: 80px;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 6px;
+    background-color: rgb(11, 11, 156);
+    color: #fff;
+    border: none;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-left: none;
+}
+
+.todoItem {
+    display: flex;
+    margin: auto;
+    margin-top: 40px;
+    column-gap: 2px;
+    background-color: rgb(58, 29, 84);
+    width: 500px;
+    border-radius: 6px;
+
+}
+
+.todoItem h2 {
+    display: flex;
+    width: 100px;
+    margin-right: 30%;
+    margin-left: 5px;
+    color: #fff;
+}
+
+.todoItem .btn button {
+    color: #fff;
+    background-color: rgb(140, 141, 137);
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    margin-left: 6px;
+    padding: 5px;
+    box-sizing: border-box;
+    margin-top: 18px;
+
+
+}
+
+.todoItem .btn .redBtn {
+    background-color: rgb(140, 4, 4);
+}
+
+.isNotActive {
+    text-decoration: line-through;
+    opacity: .5;
+}
+
+.todoItemEditable form {
+    display: flex;
+    margin-top: 40px;
+    justify-content: center;
+
+}
+
+.todoItemEditable input {
+    margin-right: 20px;
+    width: 250px;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+}
+
+.todoItemEditable .editBtn .saveBtn,
+.todoItemEditable .editBtn .cancelBtn {
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    margin-right: 5px;
+    border-radius: 6px;
+}
+
+.todoItemEditable .editBtn .saveBtn {
+    background-color: rgb(83, 231, 83);
+}
+
+.todoItemEditable .editBtn .cancelBtn {
+    color: #fff;
+    background-color: rgb(140, 4, 4);
+}
+
+.todoAppControl {
+    display: flex;
+    list-style-type: none;
+    /* width: 100%; */
+    margin-top: 50px;
+}
+
+.todoAppControl button {
+    margin: 5px 20px;
+    background-color: rgb(255, 195, 15);
+    border: none;
+    border-radius: 4px;
+
+}
+
+.todoAppControl button a {
+    text-decoration: none;
+    flex: 1 1;
+    color: #000;
+    font-weight: bold;
+    font-size: 12px;
+    margin: 25px;
+    text-align: center;
+}
+
+.todoAppControl .selected {
+    background-color: rgba(200, 7, 7, 0.966);
+    color: #fff;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.todoAppControl .selected a {
+    color: #fff;
+}
