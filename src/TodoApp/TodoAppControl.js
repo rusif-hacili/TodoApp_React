@@ -3,7 +3,7 @@ import style from './css/style.module.css';
 import { Link } from "react-router-dom";
 import { todoContext } from '../contexts/TodoApp';
 
-function TodoAppControl({ show, isActive }) {
+function TodoAppControl() {
 
     const [state, dispatch] = useContext(todoContext);
 

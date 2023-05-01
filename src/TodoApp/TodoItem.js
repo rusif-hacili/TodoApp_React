@@ -8,8 +8,9 @@ function TodoItem({ id, task, isActive, isEditable }) {
     const inpRef = useRef();
 
 
-    const removeTask = useCallback(() => {
-
+  
+  
+    const removeTask = () => {
         if (!window.confirm('Are you sure?')) {
             return state;
         }
@@ -18,47 +19,52 @@ function TodoItem({ id, task, isActive, isEditable }) {
             type: 'remove',
             payload: id
         })
-    }, []);
+    }
 
-    const complete = useCallback(() => {
+
+
+
+    const complete = () => {
         dispatch({
             type: 'complete',
             payload: id
         })
-    }, []);
+    }
 
-    const uncomplete = useCallback(() => {
+
+
+    const uncomplete = () => {
         dispatch({
             type: 'uncomplete',
             payload: id
         })
-    }, []);
+    }
 
-    const edit = useCallback(() => {
+    const edit = () => {
         dispatch({
             type: 'open_edit_form',
             payload: id
         })
-    }, []);
+    }
 
-    const cancel = useCallback(() => {
+    const cancel = () => {
         dispatch({
             type: 'close_edit_form',
             payload: id
         })
-    }, [])
+    }
 
 
-const onSubmit = useCallback((e) => {
-     e.preventDefault();
-     dispatch({
-        type: 'save_change',
-        payload: {
-            id,
-            task: inpRef.current.value
-        }
-    })
-}, [])
+    const onSubmit = (e) => {
+        e.preventDefault();
+        dispatch({
+            type: 'save_change',
+            payload: {
+                id,
+                task: inpRef.current.value
+            }
+        })
+    }
 
 
     if (isEditable) {
@@ -66,7 +72,7 @@ const onSubmit = useCallback((e) => {
             <>
                 <div className={style.todoItemEditable}>
                     <form onSubmit={onSubmit}>
-                        <input type="text" defaultValue={task} ref={inpRef}/>
+                        <input type="text" defaultValue={task} ref={inpRef} />
                         <div className={style.editBtn}>
                             <button className={style.saveBtn} type='submit'>Save</button>
                             <button className={style.cancelBtn} type='button' onClick={cancel}>Cancel</button>

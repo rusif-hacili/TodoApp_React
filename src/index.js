@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Home from './Home';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createHashRouter, RouterProvider } from 'react-router-dom';
 import TodoList from './TodoApp/TodoList';
 import TodoApp from './contexts/TodoApp';
 
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
-    element: <Home />,
+    element: <App />,
     children: [
       {
         index: true,
@@ -37,7 +37,7 @@ root.render(
   <React.StrictMode>
     <TodoApp>
       <RouterProvider router={router}>
-        <Home />
+        <App />
       </RouterProvider>
     </TodoApp>
   </React.StrictMode>
