@@ -1,1 +1,1 @@
-DEMO - https://rusif-hacili.github.io/React-TodoApp/
+DEMO - http://to-do-app-react-demo.netlify.app

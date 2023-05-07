@@ -10,49 +10,44 @@ function TodoItem({ id, task, isActive, isEditable }) {
 
   
   
-    const removeTask = () => {
-        if (!window.confirm('Are you sure?')) {
-            return state;
-        }
-
-        dispatch({
-            type: 'remove',
-            payload: id
-        })
-    }
-
-
-
-
-    const complete = () => {
+    const complete = useCallback(() => {
         dispatch({
             type: 'complete',
             payload: id
         })
-    }
+    }, []);
 
-
-
-    const uncomplete = () => {
+    const uncomplete = useCallback(() => {
         dispatch({
             type: 'uncomplete',
             payload: id
         })
-    }
+    }, []);
 
-    const edit = () => {
+    const edit = useCallback(() => {
         dispatch({
             type: 'open_edit_form',
             payload: id
         })
-    }
+    }, [])
 
-    const cancel = () => {
+    const cancel = useCallback(() => {
         dispatch({
-            type: 'close_edit_form',
+            type: 'close-edit-form',
             payload: id
         })
-    }
+    }, [])
+
+    const removeTask = useCallback(() => {
+
+        if (!window.confirm('Are you sure?')) {
+            return state;
+        }
+        dispatch({
+            type: 'remove',
+            payload: id
+        })
+    }, [])
 
 
     const onSubmit = (e) => {
